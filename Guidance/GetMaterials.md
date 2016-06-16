@@ -21,6 +21,7 @@ If you have not installed the prerequisites, here is the simple procedure to fol
 3. Restart your computer.
 4. Now you can run the script as needed.
 
+
 ## Prerequisites  ##
 * Pandoc 1.13.2
   * Windows Installer: [https://github.com/jgm/pandoc/releases](https://github.com/jgm/pandoc/releases/tag/1.13.2)
@@ -54,7 +55,10 @@ If GitHub and Git are new concepts, use the [guidance](https://guides.github.com
 
 You can use other tools with GitHub if you have experience with other Git tools including Visual Studio, VS Code, or any of the Git command line tools widely available.
 
-## Update the sources
+## Detailed instructions
+The following are the detailed instructions for cloning the repo and running the script.
+
+### Update the sources
 1. Connect to [GitHub](GitHub.com).
 2. Search GitHub for this project: 20532-DevelopingMicrosoftAzureSolutions
 ![](search.png)
@@ -66,12 +70,12 @@ You can use other tools with GitHub if you have experience with other Git tools 
 6. Select a location for the repo on your computer.
 7. To see the folders and run the script in the next procedure, right-click the project and click **Open in Explorer**.
 
-## Running the script
+### Running the script
 Whenever you want to get new labs and answer keys, you can run this script. Like any Git repo, you must sync your sources to be sure you have all the latest changes. 
 
 For more information on syncing your repo, see [Working with your remote repository on GitHub or GitHub Enterprise](https://help.github.com/desktop/guides/contributing/working-with-your-remote-repository-on-github-or-github-enterprise/).
 
-###Running script using PowerShell
+#### Running script using PowerShell
 1. Open Explorer and navigate to location of the repo you cloned. Typically, it is in your documents folder:
 ` ..\Documents\GitHub\20532-DevelopingMicrosoftAzureSolutions\Build`
 2. In the Build, folder, find the script: pandoc.ps1. Right-click the file, and **Run with PowerShell**.
