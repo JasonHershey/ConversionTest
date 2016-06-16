@@ -92,8 +92,8 @@ For more information on syncing your repo, see [Working with your remote reposit
 
 3. When the script runs, you are prompted for a version. You can type any alphanumeric text that helps you identify your files,
 
-` What is the current version?:
-` 
+  ` What is the current version?:
+  ` 
 
 4. After the script completes, you see two .zip file that contain your labs and the answer keys.
 
