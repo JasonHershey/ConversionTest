@@ -56,17 +56,23 @@ If GitHub and Git are new concepts, use the [guidance](https://guides.github.com
 You can use other tools with GitHub if you have experience with other Git tools including Visual Studio, VS Code, or any of the Git command line tools widely available.
 
 ## Detailed instructions
-The following are the detailed instructions for cloning the repo and running the script.
+The following are the detailed instructions for cloning the repo and running the script. Course 20532 Developing Microsoft Azure Solutions is used as the example.
 
 ### Update the sources
 1. Connect to [GitHub](GitHub.com).
 2. Search GitHub for this project: 20532-DevelopingMicrosoftAzureSolutions
-![](search.png)
+
+  ![](search.png)
+
 3. Click to open the link. 
 4. Clone the repo.
-![](clone.png) 
+
+  ![](clone.png) 
+
 5. Open the URL in the GitHub Desktop by clicking Open in Desktop.
-![](open.png)
+
+  ![](open.png)
+
 6. Select a location for the repo on your computer.
 7. To see the folders and run the script in the next procedure, right-click the project and click **Open in Explorer**.
 
@@ -77,13 +83,21 @@ For more information on syncing your repo, see [Working with your remote reposit
 
 #### Running script using PowerShell
 1. Open Explorer and navigate to location of the repo you cloned. Typically, it is in your documents folder:
+
 ` ..\Documents\GitHub\20532-DevelopingMicrosoftAzureSolutions\Build`
+
 2. In the Build, folder, find the script: pandoc.ps1. Right-click the file, and **Run with PowerShell**.
-![](run.png)
+
+  ![](run.png)
+
 3. When the script runs, you are prompted for a version. You can type any alphanumeric text that helps you identify your files,
-> What is the current version?:
-> 
+
+` What is the current version?:
+` 
 
 4. After the script completes, you see two .zip file that contain your labs and the answer keys.
- ![](explorer.png)
-4. Open the files to see your new .docx for the course. Move these files to a new location.   to avoid adding them to the repo. In general, you should not add these files to the repo so do try not sync from the GitHub desktop.
+
+  ![](explorer.png)
+
+5. Open the files to see your new .docx for the course. Move these files to a new location.   to avoid adding them to the repo. In general, you should not add these files to the repo so do try not sync from the GitHub desktop.
+
