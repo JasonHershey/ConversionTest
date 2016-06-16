@@ -88,7 +88,7 @@ For more information on syncing your repo, see [Working with your remote reposit
 
 2. In the Build, folder, find the script: pandoc.ps1. Right-click the file, and **Run with PowerShell**.
 
-  ![](run.png)
+  ![](run.PNG)
 
 3. When the script runs, you are prompted for a version. You can type any alphanumeric text that helps you identify your files,
 
