@@ -1,90 +1,28 @@
-# Downloading and printing your course materials
+# Getting started with your course materials
 
-The Microsoft Learning team recognzies the importance of making sure the training materials you use reflects the latest changes in cloud applications such as Microsoft Azure. In order to make sure the lab and lab answer keys for your classes are up-to-date, Microsoft has posted them to Github, where they will be updated as the underlying product user interface changes. This document contains the guidance to download and print lab and lab answer key .docx files for your course. This will allow you to ensure your students have the most up-to-date course materials for your students. 
+This document contains the guidance to download lab and answer key .docx files for your courses. 
+
+Your objective is to get the most up-to-date course materials. Use the procedure here to do that.
 
 ## Quickstart ##
 
-If you are frequent user of Windows PowerShell, you already have sync'd the Github repo for your course to your local computer previously, and you have installed the prerequisites, here are the simplest instructions: 
+If you are frequent user of PowerShell, you already have sync'd the Github repo on your system and installed the prerequisites, here are the simple instructions: 
 
-1. Sync (Clone) the repo for the course to your local computer to obtain the latest files.
-2. Go the course folder in your local repo. For example:
-  `..\GitHub\20532-DevelopingMicrosoftAzureSolutions\Build`
-3. In WindowsPowershell, run this script **pandoc.ps1**:
-  `.\pandoc.ps1`
+Go this folder in your repo and then run the script.
+`..\GitHub\20532-DevelopingMicrosoftAzureSolutions\Build`
 
-## Overview Microsoft Learning's Github solution for course labs
+Run this script:
+`pandoc.ps1`
 
-The Microsoft Learning team has created a solution that allows the Microsoft team to regularly publish updated lab and lab answer keys (LAKs) to Github. That solution also includes a script and tools that will allow you to print the labs and lab answer keys from Microsoft Word .docx files. In order to use this solution you will need to perform the following steps the first time you wish to download and print the lab files:
+If you have not installed the prerequisites, here is the simple procedure to follow if you are familiar with GitHub and PowerShell.
 
-1. Sign-up for a Github account.
-2. Install Gitub Desktop
-3. Install the prerequisite software:
-  - Pandoc 1.13.2
-  - PowerShell Community Extensions 3.2.0
-
-Once you have signed up for Github and installed the prerequisite software, the steps for downloading and printing the course lab materials are the same for each course. The steps are those listed in the previous _Quickstart_ section:
-
-1. Sync the repo for the course
-2. In Windows PowerShell navigate to the \Build folder in the local course repo.
-3. Run the pandoc.ps1 script. 
-
-More detailed instructions are provided later in this document.
-
-> **Note** Github has both a desktop client and a command line interface. Throughout this document we use the desktop client.
-
-### Terminology
-Using Github introduces terminology that may be new to you.  The following are some terms and concepts throughout this document.  For a full list of Github terms, see the [https://help.github.com/articles/github-glossary/](Github Glossary)
-
-- **Git** and **Github** - Git is an open source change tracking program.  Github is a site/solution built on top of Git. There are other websites and solutions that use Git as their backend.  Github is used primarily for open source (public) development projects, and it is free for those projects. If you want to use Github for projects that are not open source (private), you must sign up for a pay version.
-
-- **Repo** or **Repository** - Each project in Github is in a repository, or Repo for short. A repository contains all of a project's files, including documentation, and supports revision history. A repository can be either public or private. 
-
-- **Markdown** - A text file format for creating documentation. It is text based and very simple to update, making it easy to collaborate. It is rendered by Github as HTML.
-
-- **Fork** - A copy of someone else's repo that lives under your Github account, in comparison to a Branch, which lives in the orignial repo. See _Branch_.
-
-- **Branch** - A branch is a copy of a reposotiory that lives in the same repository as the original. A branch can be _merged_ with the original.
-
-- **Fetch** - Getting a copy of the latest changes from an online repo. A fetch does not _merge_ changes.
-
-- **Pull** - Fetching the latest changes from an online repo and _merging_ them with any local changes.
-
-- **Merge** - Applyng changes from one branch and applying them to another. This includes changes from an online repo and applying the changes to the local version of that repo
-
-- **Pull request** - A set of proposed changes to a repo submitted by a user, that can either be accepted or rejected by owners or callaborators of a repo.
-
-- **Push** - Sending (or submitting) your local changes to the online repo.
-
-- **Collaborator** - A Github user that has permissions to add, delete, or change the content of a repository.
+1. Install Pandoc using the download.
+2. Install PowerShell Community Extensions using the download.
+3. Restart your computer.
+4. Now you can run the script as needed.
 
 
 ## Prerequisites  ##
-Using Github and the Microsoft Learning courseware lab solution requires the following prerequisites:
-
-### Signing up for a Github account
-In order to clone a repo or collaborate with Microsoft Learning, you will need to sign up for a Github account
-
-#### To sign up for a Github account
-1. In your browser, navigate to [https://github.com/](https://github.com/).
-2. In the **Pick a username** text box, enter a unique user name.
-3. In the **Your email address** text box, enter your password.
-4. In the **Create a password** text box, enter a password that meets Githubs complexity requirements.
-5. Click **Sign up for Github**.
-6. In the **Welcome to Github** page, make sure that **Unlimited public repositories for free** is selected.
-7. Click **Finish sign up**.
-8. Github will send a confirmation email to the email address you provided. When you receive the email, open it and click **Verify email address**.
-
-### Installing Github Desktop
-Github Desktop provides a graphical user interface (GUI) for Github, where you can perform the most common functions. There are some operations that can only be performed from the command line, but none of those are needed for downloading and printing lab files.
-
-#### To install Github Desktop
-1. In your browser, navigate to [https://desktop.github.com/](https://desktop.github.com/).
-2. Click **Download Github Desktop**.
-3. When the **GithubSetup.exe** file has downloaded, double-click the file to start the setup or click **Run** if prompted by Internet Explorer.
-4. In the **Application Install - Security Warning** dialog, click **Install**.
-5. 
-
-
 * Pandoc 1.13.2
   * Windows Installer: [https://github.com/jgm/pandoc/releases](https://github.com/jgm/pandoc/releases/tag/1.13.2)
 * PowerShell Community Extensions 3.2.0
