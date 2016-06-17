@@ -8,9 +8,13 @@ If you are frequent user of Windows PowerShell, you already have sync'd the Gith
 
 1. Sync (Clone) the repo for the course to your local computer to obtain the latest files.
 2. Go the course folder in your local repo. For example:
+
   `..\GitHub\20532-DevelopingMicrosoftAzureSolutions\Build`
+
 3. In WindowsPowershell, run this script **pandoc.ps1**:
+
   `.\pandoc.ps1`
+
 
 ## Overview Microsoft Learning's Github solution for course labs
 
@@ -30,10 +34,7 @@ Once you have signed up for Github and installed the prerequisite software, the 
 
 You can use a variety of tools that support Git with GitHub, including Visual Studio, VS Code, or any of the Git command line tools widely available.
 
-> **Note** Github has both a desktop client and a command line interface. Throughout this document we use the desktop client.
-
-
-> If GitHub and Git are new concepts and you would like to learn more, see the Github [Hello Word](https://guides.github.com/activities/hello-world/) guide to get started.
+> **Note** Github has both a desktop client and a command line interface. Throughout this document we use the desktop client. If GitHub and Git are new concepts and you would like a more in-depth introduction, see the Github [Hello Word](https://guides.github.com/activities/hello-world/) guide to get started.
 
 ### Terminology
 Using Github introduces terminology that may be new to you.  The following are some terms and concepts throughout this document.  For a full list of Github terms, see the (Github Glossary)[https://help.github.com/articles/github-glossary/]
