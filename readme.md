@@ -10,3 +10,5 @@ The scripts created by [Tellus Consulting](http://tellus-consulting.com) are pro
 All source content and sample output are copyright Microsoft Corporation. No license is granted for this content.
 
 The user guide is copyight [eehoo group](http://www.eehoogroup.com/). No license is granted at this time.
+
+.
