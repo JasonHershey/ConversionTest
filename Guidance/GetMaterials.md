@@ -149,8 +149,8 @@ The Windows PowerShell script is located in the \Build folder and is named Pando
 
 #### To convert the lab files and create the Zip packages
 1. In **File Explorer** navigate to the \Build folder in the repo you cloned. For example:
-
-` ..\Documents\GitHub\20532-DevelopingMicrosoftAzureSolutions\Build`
+  
+    ` ..\Documents\GitHub\20532-DevelopingMicrosoftAzureSolutions\Build`
 
 2. Right-click the file **pandoc.ps1**, and click **Run with PowerShell**.
 
@@ -166,7 +166,7 @@ The Windows PowerShell script is located in the \Build folder and is named Pando
 
 7. Movethese files to a new location to avoid accidentally attempting to add them to the repo as part of a __Pull request__. 
 
-> To avoid the Execution Policy Chanage prompt, you can change the [Set-ExecutionPolicy](https://technet.microsoft.com/en-us/library/ee176961.aspx) setting in Windows PowerShell to execute scripts without restriction. After changing the ExecutionPolicy property, scripts that you run have the power to make  disruptive things to your computer.
+> **Note** To avoid the **Execution Policy Change** prompt, you can change the [Set-ExecutionPolicy](https://technet.microsoft.com/en-us/library/ee176961.aspx) setting in Windows PowerShell to execute scripts without restriction. After changing the ExecutionPolicy property, scripts that you run have the power to make  disruptive things to your computer.
 
 #### To print the lab files
  - Open the lab files in Microsoft Word to print them.
