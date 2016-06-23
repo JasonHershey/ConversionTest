@@ -88,7 +88,7 @@ To install the GitHub Desktop, perform the following steps:
 
 2. Click **Download Github Desktop**.
 
-3. When the **GithubSetup.exe** file has downloaded, double-click the file to start the setup or click **Run** if prompted by Internet Explorer.
+3. When the **GithubSetup.exe** file has downloaded, double-click the file to start the setup or click **Run** if you receive a prompt from Internet Explorer.
 
 4. In the **Application Install - Security Warning** dialog, click **Install**.
 
@@ -287,10 +287,14 @@ After you have created a Branch, you can clone the files to your local repo and 
 #### To edit files and commit changes in the online repo:
 
 1. In Internet Explorer, navigate to the repo on Github, and then select the file you want to edit.
-3. Click the **Edit this file** icon.
-4. Make your changes in the **Edit file** tab of the webpage and then click **Preview changes** to view your proposed changes, without committing them.
-6. Under **Commit changes**, in the **Update _filename_** text box, enter a short description of the change.
-7. In the **Add an optional extended description...** text box, enter a more detailed description of the change, if necessary, and then click **Commit changes**.
+
+2. Click the **Edit this file** icon.
+
+3. Make your changes in the **Edit file** tab of the webpage and then click **Preview changes** to view your proposed changes, without committing them.
+
+4. Under **Commit changes**, in the **Update _filename_** text box, enter a short description of the change.
+
+5. In the **Add an optional extended description...** text box, enter a more detailed description of the change, if necessary, and then click **Commit changes**.
 
 #### To create a pull request:
 
