@@ -1,296 +1,305 @@
-# Downloading and printing your course materials
+# GitHub User Guide for MCTs
 
-The Microsoft Learning team recognzies the importance of making sure the training materials you use reflects the latest changes in cloud applications such as Microsoft Azure. In order to make sure the lab and lab answer keys for your classes are up-to-date, Microsoft has posted them to Github, where they will be updated as the underlying product user interface changes. This document contains the guidance to download and print lab and lab answer key .docx files for your course. This will allow you to ensure your students have the most up-to-date course materials for your students. 
+Cloud services, such as Microsoft Azure, are updated frequently. This leads to issues for Microsoft Certified Trainers (MCTs) when they teach courses, such as _20532: Developing Microsoft Azure Solutions or 20533: Implementing Microsoft Azure Infrastructure Solutions_, because lab steps change frequently as the service changes. Due to the frequency of the changes and the fact that there may not be any notification when changes occur, it can be difficult for the course development team to rapidly identify and address any lab changes.
 
-## Quickstart ##
+To address these issues, we are using GitHub to publish the lab steps and lab scripts for courses that cover cloud services like Azure. Using GitHub allows for collaboration between the course’s authors and MCTs to keep the content current with Azure platform changes. Using GitHub allows the MCTs to provide feedback and suggestions for lab changes, and then the course authors can update lab steps and scripts quickly and relatively easily.
 
-If you are frequent user of Windows PowerShell, you already have sync'd the Github repo for your course to your local computer previously, and you have installed the prerequisites, here are the simplest instructions: 
+When you prepare to teach these courses, you should ensure that you are using the latest lab steps and scripts by downloading the appropriate files from GitHub.
 
-1. Sync (Clone) the repo for the course to your local computer to obtain the latest files.
-2. Go the course folder in your local repo. For example:
+This user guide is for MCTs who are new to GitHub, and it provides steps for connecting to GitHub, downloading and printing course materials, updating the scripts that students use in labs, and explaining how you can help ensure that this course’s content remains current.
 
-  `..\GitHub\20532-DevelopingMicrosoftAzureSolutions\Build`
+### GitHub Terminology
+GitHub introduces terminology that might be new to you, and the following list includes terms and concepts that this document uses. However, for a full list of GitHub terms, refer to the “GitHub Glossary” at <https://help.github.com/articles/GitHub-glossary/>.
 
-3. In WindowsPowershell, run this script **pandoc.ps1**:
+- *Git* and *GitHub:* *Git* is an open-source, change-tracking program, and *GitHub* is a site/solution built on Git. There are other websites and solutions that use Git as their backend. You would use GitHub primarily for open-source (public) development projects, and it is free for those projects. However, if you want to use GitHub for projects that are private, and not open source, you must sign up for a paid version.
 
-  `.\pandoc.ps1`
+- *Repo* or *Repository:* Each project in GitHub is in a repository, or *repo*. A repo contains all of a project’s files, including documentation, and it supports revision history. A repository can be public or private, and you can have a local copy of the repo on your computer hard drive, or you can use the repo within GitHub.
 
+- *Markdown:* This is a text-file format that you can use for creating documentation. It is text-based and very simple to update, which makes it easy to use during collaboration. GitHub then renders it as HTML.
 
-## Overview Microsoft Learning's Github solution for course labs
+- *GitHub flavored markdown (GFM):* There are many variations, or flavors, of the Markdown file format. The GitHub version, commonly referred to as *GFM*, is one of the most common variations of Markdown. For more information about GFM and how you can use the Markup format for your GFM documents, refer to “Getting started with writing and formatting on GitHub” at https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/.
 
-The Microsoft Learning team has created a solution that allows the Microsoft team to regularly publish updated lab and lab answer keys (LAKs) to Github. That solution also includes a script and tools that will allow you to print the labs and lab answer keys from Microsoft Word .docx files. In order to use this solution you will need to perform the following steps the first time you wish to download and print the lab files:
+- *Fork:* This is a copy of another repo that resides in your GitHub account, in comparison to a *branch*, which lives in the original repo. See “Branch” directly below.
 
-1. Sign-up for a Github account.
-2. Install Gitub Desktop
-3. Install the prerequisite software:
-  - Pandoc 1.13.2
-  - PowerShell Community Extensions 3.2.0
+- *Branch*: This is a copy of a repository that resides in the same repository as the original. You can merge a branch with the original.
 
-Once you have signed up for Github and installed the prerequisite software, the steps for downloading and printing the course lab materials are the same for each course. The steps are those listed in the previous __Quickstart__ section:
+- *Fetch*: This is the process of retrieving a copy of the latest changes from an online repo. However, a fetch *does not* merge changes.
 
-1. Sync the repo for the course
-2. In Windows PowerShell navigate to the \Build folder in the local course repo.
-3. Run the pandoc.ps1 script. 
+- *Pull:* This is the process of fetching the latest changes from an online repo and merging them with local changes.
 
-You can use a variety of tools that support Git with GitHub, including Visual Studio, VS Code, or any of the Git command line tools widely available.
+- *Merge:* This is the process of fetching changes from one branch and applying them to another. This includes retrieving changes from an online repo, and then applying them to that repo’s local version.
 
-> **Note** Github has both a desktop client and a command line interface. Throughout this document we use the desktop client. If GitHub and Git are new concepts and you would like a more in-depth introduction, see the Github [Hello Word](https://guides.github.com/activities/hello-world/) guide to get started.
+- *Pull request*: This is a set of proposed changes to a repo that a user submit, and a repo’s owners or collaborators then can accept or reject the pull request.
 
-### Terminology
-Using Github introduces terminology that may be new to you.  The following are some terms and concepts throughout this document.  For a full list of Github terms, see the (Github Glossary)[https://help.github.com/articles/github-glossary/]
+- *Push:* This is the process of sending or submitting your local changes to the online repo.
 
-- **Git** and **Github** - Git is an open source change tracking program.  Github is a site/solution built on top of Git. There are other websites and solutions that use Git as their backend.  Github is used primarily for open source (public) development projects, and it is free for those projects. If you want to use Github for projects that are not open source (private), you must sign up for a pay version.
+- *Collaborator:* This is a GitHub user that has permissions to add, delete, or change a repo’s content.
 
-- **Repo** or **Repository** - Each project in Github is in a repository, or Repo for short. A repository contains all of a project's files, including documentation, and supports revision history. A repository can be either public or private. Also, you can have a __local__ copy of the repo on your computer hard drive, or use the __online__ repo within Github. 
+## Overview of Microsoft Learning's GitHub solution for course labs
 
-- **Markdown** - A text file format for creating documentation. It is text based and very simple to update, making it easy to collaborate. It is rendered by Github as HTML.
+The Microsoft Learning team has created a solution that allows them to publish updated lab and lab answer keys (LAKs) and updated lab scripts regularly to GitHub. The solution also includes a script and tools that you can use to print labs and lab answer keys from Microsoft Word .docx files. However, if you want to use this solution, you must perform several steps the first time that you download and print lab files. A later section of this file details these steps, which include that you must:
 
-- **Github flavored markdown (GFM)** - There are many variations, or flavors, of markdown. Github version, commonly referred to as GFM, is one of the most common variations of markdown. For details on GFM and all the ways 'markup' GFM documents, see [Writing on Github](https://help.github.com/categories/writing-on-github/)
+1.  Sign-up for a GitHub account.
+2.  Install the GitHub Desktop.
+3.  Install the prerequisite software:
+  - Pandoc version 1.13.2
+  - Windows PowerShell Community Extensions 3.2.0
 
-- **Fork** - A copy of someone else's repo that lives under your Github account, in comparison to a Branch, which lives in the orignial repo. See __Branch__.
+Once you sign up for GitHub and install the prerequisite software, the steps for downloading and printing the course-lab materials are the same for each course.
 
-- **Branch** - A branch is a copy of a reposotiory that lives in the same repository as the original. A branch can be __merged__ with the original.
+You can use a variety of tools that support Git with GitHub, including Microsoft Visual Studio, Visual Studio Code, or any of the Git command-line tools that are available online.
 
-- **Fetch** - Getting a copy of the latest changes from an online repo. A fetch does not __merge__ changes.
-
-- **Pull** - Fetching the latest changes from an online repo and __merging__ them with any local changes.
-
-- **Merge** - Applyng changes from one branch and applying them to another. This includes changes from an online repo and applying the changes to the local version of that repo
-
-- **Pull request** - A set of proposed changes to a repo submitted by a user, that can either be accepted or rejected by owners or callaborators of a repo.
-
-- **Push** - Sending (or submitting) your local changes to the online repo.
-
-- **Collaborator** - A Github user that has permissions to add, delete, or change the content of a repository.
-
+> **Note:** GitHub has a desktop client and a command-line interface. Throughout this document, we use the desktop client. If GitHub and Git are new concepts, and you would like a more in-depth introduction, refer to the “GitHub [Hello World](https://guides.github.com/activities/hello-world/) guide” at <https://guides.github.com/activities/hello-world/> .
 
 ## Prerequisites  ##
-Using Github and the Microsoft Learning courseware lab solution requires the following prerequisites:
+The following section details the prerequisites for using GitHub and the Microsoft Learning courseware lab solution.
 
 ### Signing up for a Github account
+
 In order to clone a repo or collaborate with Microsoft Learning, you will need to sign up for a Github account
 
-#### To sign up for a Github account
+To sign up for a GitHub account, perform the following steps:
+
 1. In your browser, navigate to [https://github.com/](https://github.com/).
 2. In the **Pick a username** text box, enter a unique user name.
-3. In the **Your email address** text box, enter your password.
+3. In the **Your email address** text box, enter your email address.
 4. In the **Create a password** text box, enter a password that meets Githubs complexity requirements.
 5. Click **Sign up for Github**.
-6. In the **Welcome to Github** page, make sure that **Unlimited public repositories for free** is selected.
+6. In the **Welcome to Github** page, make sure that **Unlimited public repositories for free** check-box is selected.
 7. Click **Finish sign up**.
 8. Github will send a confirmation email to the email address you provided. When you receive the email, open it and click **Verify email address**.
 
 ### Installing Github Desktop
-Github Desktop provides a graphical user interface (GUI) for Github, where you can perform the most common functions. There are some operations that can only be performed from the command line, but none of those are needed for downloading and printing lab files.
 
-#### To install Github Desktop
+GitHub Desktop provides a graphical user interface (GUI) for GitHub, and you can use it to perform most common functions. There are some operations that you can perform only from a command line, but none of these operations are necessary for downloading and printing lab files.
+
+To install the GitHub Desktop, perform the following steps: 
+
 1. In your browser, navigate to [https://desktop.github.com/](https://desktop.github.com/).
 2. Click **Download Github Desktop**.
 3. When the **GithubSetup.exe** file has downloaded, double-click the file to start the setup or click **Run** if prompted by Internet Explorer.
 4. In the **Application Install - Security Warning** dialog, click **Install**.
 5. Close Github Desktop.
 
-### Installing Pandox 1.13.2
-Pandoc is a tool for converting files in one format to another. It can read many formats, including GFM, and can output in many formats include Microsoft Word's .docx format.  Pandoc is tool behind the Microsoft learning provided scripts that create Word documents from the markdown formatted lab files. If you do not install Pandoc, the document creation script fails.
+### Installing Pandox version 1.13.2
 
-#### To install Pandox 1.13.2
+Pandoc is a tool that you can use to convert files from one format to another. It can read many formats, including GFM, and you use it output Microsoft Word's .docx format. Pandoc is the tool behind the scripts that Microsoft Learning provides to create Word documents from the Markdown file format of the lab files. If you do not install Pandoc, the document-creation script fails.
+
+To install Pandoc, perform the following steps:
+
 1. In your browser, navigate to [https://github.com/jgm/pandoc/releases](https://github.com/jgm/pandoc/releases/tag/1.13.2).
 2. Scroll to the bottom of the page.
 3. Click **pandoc-1.13.2-windows.msi**.
-3. When the **pandoc-1.13.2-windows.msi** file has downloaded, double-click the file to start the setup or click **Run** if prompted by Internet Explorer.
-4. In the **Pandox 1.13.2 Setup** dialog, review the License Agreement, select **I accept the terms in the License Agreeement**, and click **Next**.
+3. When the **pandoc-1.13.2-windows.msi** file has downloaded, double-click the file to start the setup or click **Run** if you receive a prompt from Internet Explorer.
+4. In the **Pandox 1.13.2 Setup** dialog, review the License Agreement, select **I accept the terms in the License Agreeement**, and then click **Next**.
 5. Click **Finish**.
 
 ### Installing PowerShell Community Extensions 3.2.0
-PowerShell Community Extensions(PSCX) is an open source project that extends Windows PowerShell with scripts, cmdlets, functions, and other features. PSCX 3.2.0 is the most current (as of 6/16/2016) version of PSCX. PSCX is used to create the zip files that contain your .docx files. If you do not have the extensions installed, the document creation script fails.
 
-### To install PSCX 3.2.0
+PowerShell Community Extensions (PSCX) is an open-source project that extends Windows PowerShell with scripts, cmdlets, functions, and other features. PSCX version 3.2.0 is the most current (as of 6/16/2016) PSCX version. You use PSCX to create the .zip files that contain your .docx files. Please note, if you do not install these extensions, the document-creation script fails.
+
+To install PSCX 3.2.0, perform the following steps:
+
 1. In your browser, navigate to [http://pscx.codeplex.com/releases](http://pscx.codeplex.com/releases/view/133199).
 2. Under **RECOMMENDED DOWNLOAD**, click **Pscx-3.2.0.msi**.
 3. When the **Pscx-3.2.0.msi** file has downloaded, double-click the file to start the setup or click **Run** if prompted by Internet Explorer.
-3. In the **PowerShell Community Extensions 3.2.0 Setup** dialog, review the License Agreement, select **I accept the terms in the License Agreeement**, and click **Install**.
-5. In the **User Account Control** dialog, if it appears, click **Yes**.
+3. In the **PowerShell Community Extensions 3.2.0 Setup** dialog, review the License Agreement, select **I accept the terms in the License Agreeement**, and then click **Install**.
+5. If the **User Account Control** dialog, if it appears, click **Yes**.
 6. Click **Finish**.
 
-> **Important**: After installing both Pandox and PSCX, you must restart your computer to complete the installation. If you do not restart your computer, the document creation script will likely fail.
+> **Important:** After you install Pandoc and PSCX, you must restart your computer to complete the installation. If you do not restart your computer, the document-creation script might fail.
 
-## Downloading and printing lab files ##
-The labs are stored on Github in a repo. The structure for each Microsoft Learning course repo is similar. Each repo contains the following folders:
-- **Allfiles** - The \Allfiles folder contains any supporting files for the labs. This is the same as the Allfiles folder that would appear on the VHD for student VMs.
-- **Build** - The \Build folder contains the Windows PowerShell script and supporting files for creating Word documents from the lab markdown files.
-- **Instructions** - the \Instructions folder contains the lab files and lab answer key files, formatted as markdown.
+## Downloading and printing lab files
 
-You will need all of these folders in order to print the lab files.
+The labs are stored on GitHub in a repo. The structure for each Microsoft Learning course repo is similar, and each contains the following folders:
 
-### Downloading the latest course lab materials
-In order to build Word documents from the markdown files, you will need to [clone](https://help.github.com/articles/cloning-a-repository/), or get a copy of, the repo to your local computer. In order to clone the files, you will need to now where on Github the course files are located. The location in Github will typically be found **insert instructions here**.  You can also find the files by searching for the course number in Github, using the **Search Github** search box on the [Github home page](http://github.com), or by browsing through the repos under the [Microsoft Learning organization](https://github.com/MicrosoftLearning) page on Github.
+- **Allfiles:** This folder contains any supporting files for the labs. This is the same as the Allfiles folder that would appear on the virtual hard disk for virtual machines (VMs).
+
+- **Build**: This folder contains the Windows PowerShell script and supporting files for creating Word documents from the lab files that are in the Markdown format.
+
+- **Instructions:** This folder contains the lab files and LAK files, which are in the Markdown format.
+
+You need all of these folders if you want to print the lab files.
+
+### Downloading the latest materials for course labs
+
+If you want to build Word documents from Markdown files, you must [clone](https://help.github.com/articles/cloning-a-repository/) or fetch a copy of the repo on your local computer. If you want to clone the files, you must know the GitHub location of the course files. You can use the **Search GitHub** search box on the GitHub home page to search for these files by using the course number. You also can browse through the repos under the [Microsoft Learning organization](https://github.com/MicrosoftLearning) page on GitHub. The Microsoft Learning page on GitHub is located at <https://github.com/MicrosoftLearning/>.
 
 #### To clone the course repo to your local machine
-1. In your browser, navigate to the online repo in Github. For example, the online repo for course 20532: Developing Microsoft Azure Solutions, is located at [https://github.com/MicrosoftLearning/20532-DevelopingMicrosoftAzureSolutions](https://github.com/MicrosoftLearning/20532-DevelopingMicrosoftAzureSolutions).
-2. On the repo page, click **Clone or download**.
-3. In the **Clone with HTTPS** dialog, click **Open in Desktop**.
-4. In the **Internet Explorer** confirmation dialog, click **Allow** (or the equivalent for your browser).
-5. Switch to Github Desktop.
-6. In the **Browse For Folder** dialog, select a folder as the root for the local repo and click **Ok**.
 
-  If you plan to clone several repos, you can choose one common folder in this step. A subfolder for each repo will be created.
+1. In your browser, navigate to the online repo in GitHub.
+2. On the **repo** page, click **Clone or download**.
+3. In the **Clone with HTTPS** dialog box, click **Open in Desktop**.
+4. In the **Internet Explorer** confirmation dialog box, click **Allow** (or the equivalent for your browser).
+5. Switch to GitHub Desktop.
+6. In the **Browse For Folder** dialog box, select a folder as the root for the local repo, and then click **Ok**.
 
-7. In the **Repositories** list, right-click the repository name and click **Open in Explorer** to view the local files.
+  If you plan to clone several repos, you can choose one common folder in this step. This creates a subfolder for each repo.
 
-After you have cloned the repo the first time, you can simply open Github Desktop, select the repository, and click **Sync** to get the latest files.
+7. In the **Repositories** list, right-click the repository name, and then click **Open in Explorer** to view the local files.
 
-> For more information on syncing your repo, see [Working with your remote repository on GitHub or GitHub Enterprise](https://help.github.com/desktop/guides/contributing/working-with-your-remote-repository-on-github-or-github-enterprise/).
+After you clone a repo the first time, on subsequent visits, you can open GitHub Desktop, select the repository, and then click **Sync** to retrieve the latest files.
+
+> **Note:** For more information about synchronizing your repo, refer to Working with your remote repository on GitHub or GitHub Enterprise at <https://help.github.com/desktop/guides/contributing/working-with-your-remote-repository-on-github-or-github-enterprise/>.
 
 
 ### Printing the lab and LAK files
-In order to print the lab and LAK files, they will need to be converted to Word document. Microsoft Learning has provided a Windows PowerShell script to automate the task. In addition to creating Word documents, the script will also package the word documents into Zip files. At the same time, it will also Zip the \Allfiles folder, containing supporting files for the labs, for when you need to setup the lab environment.
 
-The Windows PowerShell script is located in the \Build folder and is named Pandoc.ps1.  Also located in that folder is the file template.docx, which provides the formatting in Word.
+If you want to print lab and LAK files, you must convert them Word documents first. Microsoft Learning has a Windows PowerShell script that automates this task. The script creates the Word documents, and then packages the Word documents into .zip files. At the same time, it creates a .zip file that contains the lab’s supporting files such as scripts and text files, which you will need when you set up your lab environment.
 
-#### To convert the lab files and create the Zip packages
-1. In **File Explorer** navigate to the \Build folder in the repo you cloned. For example:
+The Windows PowerShell script, Pandoc.ps1, is in the **\\Build** folder. The folder also contains template.docx, which the script uses to format files in Word. Do not alter the template.docx file.
+
+#### To convert the lab files and create the Zip packages:
+
+1. In **File Explorer** navigate to the \Build folder in the repo you cloned, such as
   
     ` ..\Documents\GitHub\20532-DevelopingMicrosoftAzureSolutions\Build`
 
 2. Right-click the file **pandoc.ps1**, and click **Run with PowerShell**.
 
-3. In the **Windows Powershell** window, if you recieve an **Execution Policy Change** prompt, type **Y** and press Enter.
+3. In the **Windows Powershell** window, if you recieve an **Execution Policy Change** prompt, type **Y** and then press Enter.
 
-4. When you receive the **What is the current version?** prompt, enter a short string or number to uniquely identify the Zip files that will be built,
+4. When you receive the **What is the current version?** prompt, enter a short string or number to uniquely identify the Zip files that is built,
 
-  > The __current version__ string will be added to the name of the Zip file.
+  > The **current version** string will be added to the name of the Zip file.
 
-5. Switch to **File Explorer**.
+5. Switch to File Explorer and in the **\\Build folder**, select the .zip files that you just created.  The file names will be **allfiles-v**_version_.zip and **lab_instructions-v__version__.zip**
 
-6. In the \Build folder, select the .zip files that were just created.  The file names will be **allfiles-v**__version__.zip and **lab_instructions-v__version__.zip**
+6. Move these files to a new location to avoid accidentally attempting to add them to the repo as part of a pull request. 
 
-7. Movethese files to a new location to avoid accidentally attempting to add them to the repo as part of a __Pull request__. 
-
-> **Note** To avoid the **Execution Policy Change** prompt, you can change the [Set-ExecutionPolicy](https://technet.microsoft.com/en-us/library/ee176961.aspx) setting in Windows PowerShell to execute scripts without restriction. After changing the ExecutionPolicy property, scripts that you run have the power to make  disruptive things to your computer.
+> **Note:** To avoid receiving the **Execution Policy Change** prompt, you can change the [**Set-ExecutionPolicy**](https://technet.microsoft.com/en-us/library/ee176961.aspx) setting in Windows PowerShell to execute scripts without restriction. After changing the **ExecutionPolicy** property, be aware now scripts that you run have the power to make disruptive things happen to your computer.
 
 #### To print the lab files
- - Open the lab files in Microsoft Word to print them.
+
+-   Open the lab files in Microsoft Word, and then print them by using the Word print functionality.
 
 ## Receiving update notifications, suggesting changes, and collaborating on projects
+
 You can receive notifications whenever there are updates to a Github repo. You have several ways to sign-up for notifications. It should not be a suprise that many of the ways you can receive notifications are also related to many of the ways you can collaborate on a project. To recieve notifications, you can:
 
-- **Watch repositories** - Watching a repository will subscribe you to notifications for any new __pull requests__ or __issues__ that are created for the repository. You automatically watch any repository you create or where you are a collaborator.
+- _Watch repositories_: When you watch a repository, GitHub subscribes you automatically to notifications for any new pull requests or issues that are created for that specific repository. You automatically watch any repository that you create or for which you are a collaborator.
 
-- **Pull request** - When you create a pull request, proposing the owners of a repo accept a change you have made, you automatically subscribe to receive notifications for the related discussion about the Pull request. In order to create a Pull request you must first create a __Branch__.
+- _Pull request_: When you create a pull request, and propose that the owners of a repo accept a change that you make, you automatically subscribe to receive notifications for the related discussion about the pull request. In order to create a Pull request you must first create a branch.
 
-- **Comments** - When you make comments on someone else's Pull request, you automatically subscribe to the forum related to the comment, or you can subscribe to the forum
+- _Comments_: When you make comments about another person’s pull request, GitHub subscribes you automatically to the forum that pertains to that comment, or you can subscribe to the forum manually.
 
-- **Issues** - An issue is a suggestion, question, or request that pertains to the repository. Each issue has its own discussion. You can subscribe to issues or you are automatically subscribed to Issues you create.
+- _Issues_: An issue is a suggestion, question, or request that pertains to a repository. Each issue has its own discussion, and you can subscribe to issues, or GitHub subscribes you automatically to issues that you create.
 
-- **Mentions** - When another user mentions you in a conversation, using your Github user name (@__username__) you will be automatically subscribed to the discussion.
+- _Mentions_: When another user mentions you in a conversation, using your GitHub user name (@_username_), GitHub subscribes you automatically to the discussion.
 
-You can modify how and when you recieve notifications. You can also unsubscribe to any or all discussions.
+You can modify how and when you receive notifications, and you also can unsubscribe to any or all discussions.
 
 ### Watching a repo
-The simplest way to make sure you know about any changes to a repo is to **Watch** the repo. You can do that, even if you have not Cloned a local copy.
 
-#### To Watch a repository
+The simplest way to make sure you know about any changes to a repo is to **watch** it. You can do that, even if you have not Cloned a local copy.
+
+To watch a repo, perform the following steps:
+
 1. In Internet Explorer, navigate to the repo on Github.
-2. Click **Watch**, and under Notifications, select **Watching**.
+2. Click **Watch**, and then under Notifications, select **Watching**.
 
-#### To unWatch a repository
+To quit watching a repo, perform the following steps:
+
 1. In Internet Explorer, navigate to the repo on Github.
-2. Click **Watch**, and under Notifications, select **Not watching**.
+2. Click **Watch**, and then under Notifications, select **Not watching**.
 
-> You can also choose the **Ignoring** option under the **Watch** drop-down list. However, this will mean you will receive **no** notifications, even if someone @mentions you in a discussion.
+> **Note:** You can select the **Ignoring** option under the **Watch** drop-down list. However, this means that you receive _no_ notifications, even if another user includes you in a discussion with the mention functionality and your GitHub user name. Therefore, you should be careful configuring the **Ignoring** option.
 
 ### Suggesting changes and collaborating on a repo
-Using Github provides an easy-to-use method of collaborating with Microsoft Learning on the courses you are interested in. If you find a mistake in a lab, the UI has changed since the lab was created, or even if you think that the lab can be improved, you can modify your own copy of the lab materials and submit the change to Microsoft Learning so that they can incorporate your updates. You do this by branching the the repo, making updates in your branch, and then submitting a Pull request to the main (master) branch. Microsoft Learning, other MCTs, and other Github users, will be able to review your changes and comment on them. You can review and comment on the changes other users make, also.  Microsoft Learning can then approve and merge changes into the master branch. When they do, any user who is watching the repo will be notified of the change.
 
-#### To create a repo Branch
+GitHub makes it easy to collaborate with other Microsoft Learning users on the courses in which you are interested.
+
+You can modify your own copy of the lab materials, and then submit your changes to Microsoft Learning so that they can incorporate your updates. You might want to modify your lab materials if:
+
+- You find a mistake in a lab.
+
+- The UI has changed since the lab was created.
+
+- You think that the lab needs improvements or modifications.
+
+To modify lab materials, you should branch the repo, make updates in your branch, and then submit a pull request to the main (master) branch. This allows Microsoft Learning staff, and other MCTs and GitHub users to review, and comment on, your changes.
+
+You can review and comment on changes that other users make, and Microsoft Learning staff then approves and merges these changes into the master branch. This action notifies any user who is watching the repo that a change has occurred.
+
+#### To create a repo Branch:
+
 1. In Internet Explorer, navigate to the repo on Github.
-2. Click **Branch :__branchname__**, and from the **Branches** list, select the branch you want to copy.
+2. Click **Branch :_branchname_**, and from the **Branches** list, select the branch you want to copy.
 
   If there is only one branch, the Branch drop-down will show **Branch: master** and the only Branch available will be **master**.
 
 3. In the blank text box, type the name of the branch you want to create. 
 
-4. Click **Create branch: __new branch name__** when it appears.
+4. Click **Create branch: _new branch name_** when it appears.
 
 #### To delete a repo Branch
 1. In Internet Explorer, navigate to the repo on Github.
-2. Click **__n__ branches**, where __n__ is the number of existing branches.
-3. On the **Branches** page, in the row for the branch you want to delete, click **Delete this branch** icon.
+2. Click **_n_ branches**, where _n_ is the number of existing branches.
+3. On the **Branches** page, in the row for the branch you want to delete, click the **Delete this branch** icon.
 
 After you have created a Branch, you can clone the files to your local repo and update them on your computer and commit (check in) the changes from within Github Desktop, or in the case of Markdown or other text files, you can edit them within Github and commit the changes online.
 
 #### To commit changes using Github Desktop
+
 1. Open Github Desktop.
-2. Select the repo containing your changes.
-3. Click **Changes**.
-4. Select the changes your want to commit.
-5. In the **Summary** text box, write a __short__ description of the change.
+2. Select the repo containing your changes and then click **Changes**.
+4. Select the changes your want to commit, and then in the **Summary** text box, write a _short_ description of the change.
 6. In the **Description** text box, provide a more detailed description of the change, if needed.
-7. Click **Commit to master**.
-8. Click **Sync** to push the local changes to the online repo.
+7. Click **Commit to master** and then click **Sync** to push the local changes to the online repo.
 
-#### To edit files and commit changes in the online repo
-1. In Internet Explorer, navigate to the repo on Github.
-2. Select the file you want to edit.
+#### To edit files and commit changes in the online repo:
+
+1. In Internet Explorer, navigate to the repo on Github, and then select the file you want to edit.
 3. Click the **Edit this file** icon.
-4. Make your changes in the **Edit file** tab of the webpage.
-5. Click **Preview changes** to view your proposed changes without committing them.
-6. Under **Commit changes**, in the **Update __filename__** text box, enter a short description of the change.
-7. In the **Add an optional extended description...** text box, enter a more detailed description of the change, if needed.
-8. Click **Commit changes**.
+4. Make your changes in the **Edit file** tab of the webpage and then click **Preview changes** to view your proposed changes, without committing them.
+6. Under **Commit changes**, in the **Update _filename_** text box, enter a short description of the change.
+7. In the **Add an optional extended description...** text box, enter a more detailed description of the change, if necessary, and then click **Commit changes**.
 
-#### To create a pull request
+#### To create a pull request:
+
 1. In Internet Explorer, navigate to the repo on Github.
-2. Click **Branch :__branchname__**, and from the **Branches** list, select the branch you want from which you want to create a pull request.
-3. Click **New pull request**.
-4. On the **Open a pull request** page, the **Title** text box, update the name of the pull request if needed.
-5. On the **Write** tab, in the **Leave a comment** text box, provide a description of the proposed change.
-6. Click **Create pull request**.
+2. Click **Branch :__branchname__**, and from the **Branches** list, select the branch for which you want to create a pull request.
+3. Click **New pull request**, and on the **Open a pull request** page, in the **Title** text box, update the name of the pull request if necessary.
+4. On the **Write** tab, in the **Leave a comment** text box, provide a description of the proposed change and then click **Create pull request**.
 
-As noted previously, you can also comment on pull requests and commits made by other users. When you comment on a commit, you view a source diff of the file and comment on specific changes on a line-by-line basis, or comment on the entire commit.
+After you have created a Branch, you can clone the files to your local repo, update them on your computer, and then check in the changes from the GitHub Desktop. If you are working with Markdown or other text files, you can edit them in GitHub, and then check in the changes online.
 
 #### To review and comment on a pull request
 1. In Internet Explorer, navigate to the repo on Github.
-2. Click **Pull requests __n__**, where __n__ is the number of active pull requests.
-3. Select the pull request you want to review.
-4. On the **Write** tab, in the **Leave a comment** text box, provide your comment.
-6. Click **Comment**.
+2. Click **Pull requests _n_**, where _**n**_ is the number of active pull requests.
+3. Select the pull request you want to review and then on the **Write** tab, in the **Leave a comment** text box, input your comment.
+4. Click **Comment**.
 
 #### To review and comment on a commit
 1. In Internet Explorer, navigate to the repo on Github.
-2.  Click **__n__ commits**, where __n__ is the number of commits that have been submitted.
-
-  > If you want to review the latest commit, you can select the title/short description of the commit from file list.
- 
-3. In the **source diff** section, select the change you want to comment on by clicking the **+** that appears when the mouse hovers over the change.
+2. Click **_n_ commits**, where _**n**_ is the number of commits that have been submitted. If you want to review the latest commit, you can select the title/short description of the commit from file list.
+3. In the **source diff** section, select the change you want to comment on by clicking the (**+**) that appears when the mouse hovers over the change.
 4. On the **Write** tab, in the **Comment** text box, provide your comment.
 6. Click **Comment**.
-7. If you wish to provide an overall comment on the commit:
-  1. Under **__n__ comments on commit**, where __n__ is the number of comments submitted, under the **Write** tab, in eh **Leave a comment** text box, type your comment.
-  2. Click **Comment on this commit**.
+  
+  If you wish to provide an overall comment on the commit, under **_n_ comments on commit**, where _**n**_ is the number of comments submitted, under the **Write** tab, in eh **Leave a comment** text box, type your comment and click **Comment on this commit**.
 
 You can also make suggestions about an overall project, by submitting an Issue or commenting on an existing Issue.
 
-#### To submit an Issue
-1. In Internet Explorer, navigate to the repo on Github.
-2. Click **Issues**.
-3. Click **New issue**.
-4. In the **Title** text box, enter the title for the issue.
-5. In the **Leave a comment** text box, enter a description of the issue or suggestion.
-6. Click **Submit new issue**.
+#### To submit an Issue:
 
-#### To review and comment on an existing issue
 1. In Internet Explorer, navigate to the repo on Github.
-2. Click **Issues**.
-3. Select the title of the issue you want to review.
-4. On the **__Issue name__** page, on the **Write** tab, in the **Leave a comment** text box, provide your comment.
+2. Click **Issues**, and then click **New issue**.
+4. In the **Title** text box, enter the title for the issue, and then in the **Leave a comment** text box, enter a description of the issue or suggestion.
+5. Click **Submit new issue**.
+
+#### To review and comment on an existing issue:
+
+1. In Internet Explorer, navigate to the repo on Github.
+2. Click **Issues**, and then select the title of the issue you want to review.
+4. On the **_Issue name_** page, on the **Write** tab, in the **Leave a comment** text box, provide your comment.
 6. Click **Comment**.
 
-Whenever you create an issue, or a comment on a pull request or commit, you can also bring other Github users or teams into the conversation. You do this by __mentioning__ them in the body of the comment. If you are familar with Twitter, this feature will look very familiar. 
+Whenever you create an issue, or a comment on a pull request or commit, you also can include other GitHub users or teams into the conversation by performing a **mention** of them in the comment’s body. If you are familiar with Twitter, this feature will look very familiar.
 
-#### To mention a Github user in a comment
+#### To mention a Github user in a comment:
+
 1. In Internet Explorer, navigate to the repo on Github.
-2. Create your comment or issue as described previously.
-3. In the comment text box, type **@**, followed by the user or team name, within the comment.
+2. Create your comment or issue as described previously, and in the comment text box, type **@**, followed by the user or team name, within the comment.
 
-> When you type the **@** symbol, a list of Github users who are collaborators on the project, or who are otherwise participating in comments on the project, will appear. The list uses autocomplete as you type to filter the list.
+> **Note:** When you type the **@** symbol, a list appears that contains GitHub users who are collaborators on the applicable project and anyone who is participating in the project’s comments. The list uses autocomplete as you type, so that you can filter the list easily.
