@@ -191,7 +191,7 @@ The Windows PowerShell script, Pandoc.ps1, is in the **\\Build** folder. The fol
 
   > **Note:** The **current version** string will be added to the name of the Zip file.
 
-5. Switch to File Explorer and in the **\\Build folder**, select the .zip files that you just created.  The file names will be **allfiles-v _version_ .zip** and **lab_instructions-v _version_ .zip**
+5. Switch to File Explorer and in the **\\Build folder**, select the .zip files that you just created.  The file names will be **allfiles-v*version*.zip** and **lab_instructions-v*version*.zip**
 
 6. Move these files to a new location to avoid accidentally attempting to add them to the repo as part of a pull request. 
 
