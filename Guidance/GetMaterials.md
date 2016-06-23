@@ -189,9 +189,9 @@ The Windows PowerShell script, Pandoc.ps1, is in the **\\Build** folder. The fol
 
 4. When you receive the **What is the current version?** prompt, enter a short string or number to uniquely identify the Zip files that is built,
 
-  > The **current version** string will be added to the name of the Zip file.
+  > **Note:** The **current version** string will be added to the name of the Zip file.
 
-5. Switch to File Explorer and in the **\\Build folder**, select the .zip files that you just created.  The file names will be **allfiles-v_version_.zip** and **lab_instructions-v_version_.zip**
+5. Switch to File Explorer and in the **\\Build folder**, select the .zip files that you just created.  The file names will be **allfiles-v _version_ .zip** and **lab_instructions-v _version_ .zip**
 
 6. Move these files to a new location to avoid accidentally attempting to add them to the repo as part of a pull request. 
 
@@ -255,7 +255,7 @@ You can review and comment on changes that other users make, and Microsoft Learn
 
 1. In Internet Explorer, navigate to the repo on Github.
 
-2. Click **Branch :_branchname_**, and from the **Branches** list, select the branch you want to copy.
+2. Click **Branch: _branchname_**, and from the **Branches** list, select the branch you want to copy.
 
   If there is only one branch, the Branch drop-down will show **Branch: master** and the only Branch available will be **master**.
 
