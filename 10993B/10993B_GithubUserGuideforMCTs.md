@@ -123,7 +123,7 @@ To install Pandoc, perform the following steps:
 
 5. Click **Finish**.
 
-### Installing PowerShell Community Extensions 3.2.0
+### Installing PowerShell Community Extensions
 
 PowerShell Community Extensions (PSCX) is an open-source project that extends Windows PowerShell with scripts, cmdlets, functions, and other features. You use PSCX to create the .zip files that contain your .docx files. Please note, if you do not install these extensions, the document-creation script fails.
 
@@ -148,17 +148,19 @@ Downloading and printing lab files
 
 The labs are stored on GitHub in a repo. The structure for each Microsoft Learning course repo is similar, and each contains the following folders:
 
-**Allfiles:** This folder contains any supporting files for the labs. This is the same as the Allfiles folder that would appear on the virtual hard disk for virtual machines (VMs).
+- **Allfiles:** This folder contains any supporting files for the labs. This is the same as the Allfiles folder that would appear on the virtual hard disk for virtual machines (VMs).
 
-**Build**: This folder contains the Windows PowerShell script and supporting files for creating Word documents from the lab files that are in the Markdown format.
+- **Build**: This folder contains the Windows PowerShell script and supporting files for creating Word documents from the lab files that are in the Markdown format.
 
-**Instructions:** This folder contains the lab files and LAK files, which are in the Markdown format.
+- **Instructions:** This folder contains the lab files and LAK files, which are in the Markdown format.
 
 You need all of these folders if you want to print the lab files.
+
 
 ### Downloading the latest materials for course labs
 
 If you want to build Word documents from Markdown files, you must [clone](https://help.github.com/articles/cloning-a-repository/) or fetch a copy of the repo on your local computer. If you want to clone the files, you must know the GitHub location of the course files. You can use the **Search GitHub** search box on the GitHub home page to search for these files by using the course number. You also can browse through the repos under the [Microsoft Learning organization](https://github.com/MicrosoftLearning) page on GitHub. The Microsoft Learning page on GitHub is located at [https://github.com/MicrosoftLearning/](https://github.com/MicrosoftLearning/).
+
 
 #### To clone the course repo to your local machine
 
@@ -182,11 +184,13 @@ After you clone a repo the first time, on subsequent visits, you can open GitHub
 
 > **Note:** For more information about synchronizing your repo, refer to Working with your remote repository on GitHub or GitHub Enterprise at [https://help.github.com/desktop/guides/contributing/working-with-your-remote-repository-on-github-or-github-enterprise/](https://help.github.com/desktop/guides/contributing/working-with-your-remote-repository-on-github-or-github-enterprise/).
 
+
 ### Printing the lab and LAK files
 
 If you want to print lab and LAK files, you must convert them Word documents first. Microsoft Learning has a Windows PowerShell script that automates this task. The script creates the Word documents, and then packages the Word documents into .zip files. At the same time, it creates a .zip file that contains the lab’s supporting files such as scripts and text files, which you will need when you set up your lab environment.
 
 The Windows PowerShell script, Pandoc.ps1, is in the **\\Build** folder. The folder also contains template.docx, which the script uses to format files in Word. Do not alter the template.docx file.
+
 
 #### To convert the lab files and create the Zip packages:
 
@@ -210,6 +214,7 @@ The Windows PowerShell script, Pandoc.ps1, is in the **\\Build** folder. The fol
 
 > **Note:** To avoid receiving the **Execution Policy Change** prompt, you can change the [**Set-ExecutionPolicy**](https://technet.microsoft.com/en-us/library/ee176961.aspx) setting in Windows PowerShell to execute scripts without restriction. After changing the **ExecutionPolicy** property, be aware now scripts that you run have the power to make disruptive things happen to your computer.
 
+
 #### To print the lab files:
 
 - Open the lab files in Microsoft Word, and then print them by using the Word print functionality.
@@ -220,15 +225,11 @@ Receiving update notifications, suggesting changes, and collaborating on project
 
 You can configure your GitHub experience so that you receive notifications when updates occur to a GitHub repo. There are several ways in which you can sign up for notifications, and many of them relate to the many ways that you can collaborate on a project. To receive notifications, you can:
 
-  *Watch repositories*: When you watch a repository, GitHub subscribes you automatically to notifications for any new pull requests or issues that are created for that specific repository. You automatically watch any repository that you create or for which you are a collaborator.
-
-  *Pull request*: When you create a pull request, and propose that the owners of a repo accept a change that you make, you automatically subscribe to receive notifications for the related discussion about the pull request. In order to create a Pull request you must first create a branch.
-
-  *Comments*: When you make comments about another person’s pull request, GitHub subscribes you automatically to the forum that pertains to that comment, or you can subscribe to the forum manually.
-
-  *Issues*: An issue is a suggestion, question, or request that pertains to a repository. Each issue has its own discussion, and you can subscribe to issues, or GitHub subscribes you automatically to issues that you create.
-
-  *Mentions*: When another user mentions you in a conversation, using your GitHub user name (@*username*), GitHub subscribes you automatically to the discussion.
+- *Watch repositories*: When you watch a repository, GitHub subscribes you automatically to notifications for any new pull requests or issues that are created for that specific repository. You automatically watch any repository that you create or for which you are a collaborator.
+- *Pull request*: When you create a pull request, and propose that the owners of a repo accept a change that you make, you automatically subscribe to receive notifications for the related discussion about the pull request. In order to create a Pull request you must first create a branch.
+- *Comments*: When you make comments about another person’s pull request, GitHub subscribes you automatically to the forum that pertains to that comment, or you can subscribe to the forum manually.
+- *Issues*: An issue is a suggestion, question, or request that pertains to a repository. Each issue has its own discussion, and you can subscribe to issues, or GitHub subscribes you automatically to issues that you create.
+- *Mentions*: When another user mentions you in a conversation, using your GitHub user name (@*username*), GitHub subscribes you automatically to the discussion.
 
 You can modify how and when you receive notifications, and you also can unsubscribe to any or all discussions.
 
@@ -251,6 +252,7 @@ To quit watching a repo, perform the following steps:
 
 > **Note:** You can select the **Ignoring** option under the **Watch** drop-down list. However, this means that you receive *no* notifications, even if another user includes you in a discussion with the mention functionality and your GitHub user name. Therefore, you should be careful configuring the **Ignoring** option.
 
+
 ### Suggesting changes and collaborating on a repo
 
 GitHub makes it easy to collaborate with other Microsoft Learning users on the courses in which you are interested.
@@ -258,9 +260,7 @@ GitHub makes it easy to collaborate with other Microsoft Learning users on the c
 You can modify your own copy of the lab materials, and then submit your changes to Microsoft Learning so that they can incorporate your updates. You might want to modify your lab materials if:
 
 - You find a mistake in a lab.
-
 - The UI has changed since the lab was created.
-
 - You think that the lab needs improvements or modifications.
 
 To modify lab materials, you should branch the repo, make updates in your branch, and then submit a pull request to the main (master) branch. This allows Microsoft Learning staff, and other MCTs and GitHub users to review, and comment on, your changes.
@@ -286,7 +286,7 @@ You can review and comment on changes that other users make, and Microsoft Learn
 
 2. Click **_n_ branches**, where **_n_** is the number of existing branches.
 
-2.  On the **Branches** page, in the row for the branch that you want to delete, click **Delete this branch** icon.
+3.  On the **Branches** page, in the row for the branch that you want to delete, click **Delete this branch** icon.
 
 After you have created a Branch, you can clone the files to your local repo, update them on your computer, and then check in the changes from the GitHub Desktop. If you are working with Markdown or other text files, you can edit them in GitHub, and then check in the changes online.
 
